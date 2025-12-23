@@ -450,16 +450,8 @@
             </div>
         </div>
 
-        <!-- Formulario oculto para Google Sheets -->
-        <form id="googleForm" action="https://script.google.com/macros/s/AKfycbxEYTs3mhRLyxcGr3OuUSyFrT6_3sVDNw5NhvHTRvh8ezU0J7dLkxvLmdz8MuLPIh-6/exec" method="POST" target="hidden_iframe" style="display:none;">
-            <input type="hidden" name="diseno" id="g_diseno">
-            <input type="hidden" name="facilidad" id="g_facilidad">
-            <input type="hidden" name="funciones" id="g_funciones">
-            <input type="hidden" name="intencion" id="g_intencion">
-            <input type="hidden" name="sugerencias" id="g_sugerencias">
-            <input type="hidden" name="email" id="g_email">
-        </form>
-        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <!-- Iframe oculto para Google Sheets -->
+        <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
 
         <div class="footer">
             Circuito Turistico Piura - Catacaos
@@ -467,6 +459,8 @@
     </div>
 
     <script>
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxEYTs3mhRLyxcGr3OuUSyFrT6_3sVDNw5NhvHTRvh8ezU0J7dLkxvLmdz8MuLPIh-6/exec';
+
         document.getElementById('validationForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -475,7 +469,7 @@
             btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             btnSubmit.disabled = true;
 
-            // Recopilar datos del formulario visible
+            // Recopilar datos del formulario
             var formData = new FormData(this);
 
             // Procesar campos simples
@@ -492,22 +486,24 @@
             });
             var funcionesStr = funciones.length > 0 ? funciones.join(', ') : 'Ninguna seleccionada';
 
-            // Copiar datos al formulario oculto de Google
-            document.getElementById('g_diseno').value = diseno;
-            document.getElementById('g_facilidad').value = facilidad;
-            document.getElementById('g_funciones').value = funcionesStr;
-            document.getElementById('g_intencion').value = intencion;
-            document.getElementById('g_sugerencias').value = sugerencias;
-            document.getElementById('g_email').value = email;
+            // Construir URL con parametros GET
+            var url = GOOGLE_SCRIPT_URL + '?' +
+                'diseno=' + encodeURIComponent(diseno) +
+                '&facilidad=' + encodeURIComponent(facilidad) +
+                '&funciones=' + encodeURIComponent(funcionesStr) +
+                '&intencion=' + encodeURIComponent(intencion) +
+                '&sugerencias=' + encodeURIComponent(sugerencias) +
+                '&email=' + encodeURIComponent(email);
 
-            // Enviar formulario oculto a Google Sheets
-            document.getElementById('googleForm').submit();
+            // Enviar via iframe oculto
+            var iframe = document.getElementById('hidden_iframe');
+            iframe.src = url;
 
-            // Mostrar mensaje de gracias despues de un momento
+            // Mostrar mensaje de gracias
             setTimeout(function() {
                 document.querySelector('.form-content').classList.add('hidden');
                 document.getElementById('thankYou').classList.add('active');
-            }, 1000);
+            }, 1500);
         });
     </script>
 </body>
