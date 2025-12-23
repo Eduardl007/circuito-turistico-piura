@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion - Circuito Turistico Piura</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #FFF8F0 0%, #F5E6D3 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            margin-bottom: 25px;
+        }
+
+        .question:last-of-type {
+            margin-bottom: 30px;
+        }
+
+        .question label {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .question label span {
+            color: #ef4444;
+        }
+
+        /* Rating Stars */
+        .rating {
+            display: flex;
+            gap: 8px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: #d1d5db;
+            transition: color 0.2s;
+            margin: 0;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input:checked ~ label {
+            color: #fbbf24;
+        }
+
+        /* Radio Options */
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .option input {
+            display: none;
+        }
+
+        .option label {
+            display: block;
+            padding: 12px 16px;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .option input:checked + label {
+            background: #FFF8F0;
+            border-color: #D4A574;
+            color: #8B6914;
+        }
+
+        .option label:hover {
+            border-color: #D4A574;
+        }
+
+        /* Checkbox Options */
+        .checkbox-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checkbox-option:hover {
+            border-color: #D4A574;
+        }
+
+        .checkbox-option input {
+            width: 18px;
+            height: 18px;
+            accent-color: #D4A574;
+        }
+
+        .checkbox-option span {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        /* Textarea */
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            min-height: 80px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #D4A574;
+        }
+
+        /* Input */
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #D4A574;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-submit i {
+            font-size: 1.1rem;
+        }
+
+        /* Progress */
+        .progress {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e5e7eb;
+        }
+
+        .progress-dot.active {
+            background: #D4A574;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        /* Thank you message */
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .thank-you.active {
+            display: block;
+        }
+
+        .thank-you i {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+
+        .thank-you h2 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .thank-you p {
+            color: #6b7280;
+        }
+
+        .form-content.hidden {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .checkbox-options {
+                grid-template-columns: 1fr;
+            }
+
+            .options {
+                flex-direction: column;
+            }
+
+            .option {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="assets/favicon.svg" alt="Logo">
+            <h1>Tu opinion nos importa</h1>
+            <p>Ayudanos a mejorar con tu feedback (2 min)</p>
+        </div>
+
+        <div class="form-card">
+            <div class="progress">
+                <span class="progress-dot active"></span>
+                <span class="progress-dot active"></span>
+                <span class="progress-dot active"></span>
+                <span class="progress-dot active"></span>
+                <span class="progress-dot active"></span>
+            </div>
+
+            <form id="validationForm" class="form-content">
+                <!-- Pregunta 1: Diseño -->
+                <div class="question">
+                    <label>1. ¿Como calificarias el diseno visual de la web? <span>*</span></label>
+                    <div class="rating">
+                        <input type="radio" name="diseno" id="d5" value="5" required>
+                        <label for="d5"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="diseno" id="d4" value="4">
+                        <label for="d4"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="diseno" id="d3" value="3">
+                        <label for="d3"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="diseno" id="d2" value="2">
+                        <label for="d2"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="diseno" id="d1" value="1">
+                        <label for="d1"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2: Facilidad -->
+                <div class="question">
+                    <label>2. ¿Que tan facil fue navegar y encontrar informacion? <span>*</span></label>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="facilidad" id="f1" value="Muy facil" required>
+                            <label for="f1">Muy facil</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="facilidad" id="f2" value="Facil">
+                            <label for="f2">Facil</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="facilidad" id="f3" value="Regular">
+                            <label for="f3">Regular</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="facilidad" id="f4" value="Dificil">
+                            <label for="f4">Dificil</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3: Funcionalidades -->
+                <div class="question">
+                    <label>3. ¿Que funcionalidades te parecieron mas utiles?</label>
+                    <div class="checkbox-options">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="funciones" value="Mapa interactivo">
+                            <span>Mapa interactivo</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="funciones" value="Sistema de reservas">
+                            <span>Sistema de reservas</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="funciones" value="Chatbot">
+                            <span>Chatbot asistente</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="funciones" value="Galeria gastronomica">
+                            <span>Galeria gastronomica</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="funciones" value="Filtros de experiencias">
+                            <span>Filtros de experiencias</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="funciones" value="Paquetes turisticos">
+                            <span>Paquetes turisticos</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4: Intencion de compra -->
+                <div class="question">
+                    <label>4. ¿Reservarias un tour a traves de esta web? <span>*</span></label>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" name="intencion" id="i1" value="Definitivamente si" required>
+                            <label for="i1">Definitivamente si</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="intencion" id="i2" value="Probablemente si">
+                            <label for="i2">Probablemente si</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="intencion" id="i3" value="No estoy seguro">
+                            <label for="i3">No estoy seguro</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="intencion" id="i4" value="Probablemente no">
+                            <label for="i4">Probablemente no</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5: Sugerencias -->
+                <div class="question">
+                    <label>5. ¿Que mejorarias o agregarias a la web?</label>
+                    <textarea name="sugerencias" placeholder="Escribe tus sugerencias aqui..."></textarea>
+                </div>
+
+                <!-- Pregunta 6: Email (opcional) -->
+                <div class="question">
+                    <label>6. Email (opcional, para enviarte promociones)</label>
+                    <input type="email" name="email" placeholder="tu@email.com">
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar feedback
+                </button>
+            </form>
+
+            <div class="thank-you" id="thankYou">
+                <i class="fas fa-check-circle"></i>
+                <h2>¡Gracias por tu feedback!</h2>
+                <p>Tu opinion nos ayuda a mejorar.</p>
+                <br>
+                <a href="index.html" style="color: #D4A574; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-arrow-left"></i> Volver a la web
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            Circuito Turistico Piura - Catacaos
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('validationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Recopilar datos
+            var formData = new FormData(this);
+            var data = {};
+
+            // Procesar campos simples
+            data.diseno = formData.get('diseno');
+            data.facilidad = formData.get('facilidad');
+            data.intencion = formData.get('intencion');
+            data.sugerencias = formData.get('sugerencias') || 'Sin sugerencias';
+            data.email = formData.get('email') || 'No proporcionado';
+
+            // Procesar checkboxes
+            var funciones = [];
+            document.querySelectorAll('input[name="funciones"]:checked').forEach(function(cb) {
+                funciones.push(cb.value);
+            });
+            data.funciones = funciones.length > 0 ? funciones.join(', ') : 'Ninguna seleccionada';
+
+            // Construir mensaje para WhatsApp
+            var mensaje = '📊 *FEEDBACK - CIRCUITO TURISTICO PIURA*\n\n';
+            mensaje += '⭐ *Diseno:* ' + data.diseno + '/5 estrellas\n';
+            mensaje += '🧭 *Navegacion:* ' + data.facilidad + '\n';
+            mensaje += '✅ *Funciones utiles:* ' + data.funciones + '\n';
+            mensaje += '💰 *Intencion de reserva:* ' + data.intencion + '\n';
+            mensaje += '💡 *Sugerencias:* ' + data.sugerencias + '\n';
+            mensaje += '📧 *Email:* ' + data.email + '\n';
+            mensaje += '\n_Enviado desde formulario de validacion_';
+
+            // Enviar por WhatsApp
+            var whatsappUrl = 'https://wa.me/51987654321?text=' + encodeURIComponent(mensaje);
+            window.open(whatsappUrl, '_blank');
+
+            // Mostrar mensaje de gracias
+            document.querySelector('.form-content').classList.add('hidden');
+            document.getElementById('thankYou').classList.add('active');
+        });
+    </script>
+</body>
+</html>
