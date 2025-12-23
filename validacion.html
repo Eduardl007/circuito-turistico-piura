@@ -469,42 +469,49 @@
 
             // Recopilar datos
             var formData = new FormData(this);
-            var data = {};
 
             // Procesar campos simples
-            data.diseno = formData.get('diseno');
-            data.facilidad = formData.get('facilidad');
-            data.intencion = formData.get('intencion');
-            data.sugerencias = formData.get('sugerencias') || 'Sin sugerencias';
-            data.email = formData.get('email') || 'No proporcionado';
+            var diseno = formData.get('diseno') || '0';
+            var facilidad = formData.get('facilidad') || 'No respondido';
+            var intencion = formData.get('intencion') || 'No respondido';
+            var sugerencias = formData.get('sugerencias') || 'Sin sugerencias';
+            var email = formData.get('email') || 'No proporcionado';
 
             // Procesar checkboxes
             var funciones = [];
             document.querySelectorAll('input[name="funciones"]:checked').forEach(function(cb) {
                 funciones.push(cb.value);
             });
-            data.funciones = funciones.length > 0 ? funciones.join(', ') : 'Ninguna seleccionada';
+            var funcionesStr = funciones.length > 0 ? funciones.join(', ') : 'Ninguna seleccionada';
 
-            // Enviar a Google Sheets
-            fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(function() {
-                // Mostrar mensaje de gracias
+            // Construir URL con parametros
+            var params = new URLSearchParams();
+            params.append('diseno', diseno);
+            params.append('facilidad', facilidad);
+            params.append('funciones', funcionesStr);
+            params.append('intencion', intencion);
+            params.append('sugerencias', sugerencias);
+            params.append('email', email);
+
+            var url = GOOGLE_SCRIPT_URL + '?' + params.toString();
+
+            // Crear iframe oculto para enviar
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.name = 'hidden_iframe';
+            document.body.appendChild(iframe);
+
+            iframe.onload = function() {
+                // Mostrar mensaje de gracias despues de enviar
                 document.querySelector('.form-content').classList.add('hidden');
                 document.getElementById('thankYou').classList.add('active');
-            })
-            .catch(function(error) {
-                console.error('Error:', error);
-                alert('Hubo un error al enviar. Por favor intenta de nuevo.');
-                btnSubmit.innerHTML = btnOriginal;
-                btnSubmit.disabled = false;
-            });
+                // Limpiar iframe
+                setTimeout(function() {
+                    document.body.removeChild(iframe);
+                }, 1000);
+            };
+
+            iframe.src = url;
         });
     </script>
 </body>
