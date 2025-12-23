@@ -1691,6 +1691,99 @@
         </div>
     </div>
 
+    <!-- Modal Checkout -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-credit-card"></i> Finalizar Reserva</h3>
+                <button class="modal-close" id="checkoutClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-grid">
+                    <!-- Resumen del pedido -->
+                    <div class="checkout-summary">
+                        <h4><i class="fas fa-shopping-bag"></i> Resumen de tu pedido</h4>
+                        <div class="checkout-items" id="checkoutItems">
+                            <!-- Items del carrito -->
+                        </div>
+                        <div class="checkout-total">
+                            <span>Total a pagar:</span>
+                            <span class="total-value" id="checkoutTotal">S/0</span>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de datos -->
+                    <div class="checkout-form">
+                        <h4><i class="fas fa-user"></i> Tus datos</h4>
+                        <form id="checkoutForm">
+                            <div class="form-group">
+                                <label for="checkoutNombre">Nombre completo *</label>
+                                <input type="text" id="checkoutNombre" name="nombre" required placeholder="Ej: Juan Perez">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="checkoutEmail">Email *</label>
+                                    <input type="email" id="checkoutEmail" name="email" required placeholder="tu@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkoutTelefono">Telefono/WhatsApp *</label>
+                                    <input type="tel" id="checkoutTelefono" name="telefono" required placeholder="987654321">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutNotas">Notas adicionales</label>
+                                <textarea id="checkoutNotas" name="notas" rows="2" placeholder="Alergias, requerimientos especiales, etc."></textarea>
+                            </div>
+
+                            <h4><i class="fas fa-wallet"></i> Metodo de pago</h4>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="metodoPago" value="yape" checked>
+                                    <div class="payment-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Yape_logo.svg/512px-Yape_logo.svg.png" alt="Yape">
+                                        <span>Yape</span>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="metodoPago" value="plin">
+                                    <div class="payment-card">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Plin_Logo.svg/512px-Plin_Logo.svg.png" alt="Plin">
+                                        <span>Plin</span>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="metodoPago" value="transferencia">
+                                    <div class="payment-card">
+                                        <i class="fas fa-university"></i>
+                                        <span>Transferencia</span>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="metodoPago" value="efectivo">
+                                    <div class="payment-card">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>Efectivo</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="checkout-actions">
+                                <button type="button" class="btn-secondary" id="btnBackToCart">
+                                    <i class="fas fa-arrow-left"></i> Volver
+                                </button>
+                                <button type="submit" class="btn-primary btn-confirm">
+                                    <i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notifications -->
     <div class="toast-container" id="toastContainer"></div>
 

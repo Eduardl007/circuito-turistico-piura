@@ -673,27 +673,8 @@ function initCart() {
         overlay.classList.remove('active');
     }
 
-    // Checkout button
-    const checkoutBtn = document.getElementById('btnCheckout');
-    checkoutBtn.addEventListener('click', () => {
-        if (cart.length > 0) {
-            // 📊 ANALYTICS: Tracking de inicio de checkout
-            if (window.trackUserInteraction) {
-                const totalValue = cart.reduce((sum, item) => sum + item.total, 0);
-                trackUserInteraction('checkout', {
-                    items: cart.map(item => ({
-                        name: item.name,
-                        price: item.total,
-                        date: item.date
-                    })),
-                    total: totalValue
-                });
-            }
-
-            showToast('success', 'Checkout', 'Redirigiendo al proceso de pago...');
-            // Here would go the payment integration
-        }
-    });
+    // Checkout button - ahora manejado por modules.js
+    // La funcion openCheckoutModal() se define en modules.js
 }
 
 function addToCart(item) {

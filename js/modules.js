@@ -434,3 +434,189 @@ window.openQuickView = openQuickView;
 window.closeQuickView = closeQuickView;
 window.openDestinoModal = openDestinoModal;
 window.closeDestinoModal = closeDestinoModal;
+
+// ============================================
+// CHECKOUT SYSTEM
+// ============================================
+
+// Numero de WhatsApp del negocio (cambiar por el real)
+var WHATSAPP_NUMBER = '51987654321';
+
+function initCheckout() {
+    var checkoutModal = document.getElementById('checkoutModal');
+    var checkoutClose = document.getElementById('checkoutClose');
+    var btnBackToCart = document.getElementById('btnBackToCart');
+    var checkoutForm = document.getElementById('checkoutForm');
+    var btnCheckout = document.getElementById('btnCheckout');
+
+    // Abrir checkout desde carrito
+    if (btnCheckout) {
+        btnCheckout.addEventListener('click', function() {
+            if (typeof cart !== 'undefined' && cart.length > 0) {
+                openCheckoutModal();
+            } else {
+                showToast('info', 'Carrito vacio', 'Agrega experiencias antes de continuar');
+            }
+        });
+    }
+
+    // Cerrar checkout
+    if (checkoutClose) {
+        checkoutClose.addEventListener('click', closeCheckoutModal);
+    }
+
+    if (checkoutModal) {
+        checkoutModal.addEventListener('click', function(e) {
+            if (e.target === checkoutModal) closeCheckoutModal();
+        });
+    }
+
+    // Volver al carrito
+    if (btnBackToCart) {
+        btnBackToCart.addEventListener('click', function() {
+            closeCheckoutModal();
+            document.getElementById('cartSidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+    }
+
+    // Enviar formulario
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            processCheckout();
+        });
+    }
+}
+
+function openCheckoutModal() {
+    var modal = document.getElementById('checkoutModal');
+    var overlay = document.getElementById('overlay');
+    var cartSidebar = document.getElementById('cartSidebar');
+
+    // Cerrar carrito
+    cartSidebar.classList.remove('active');
+
+    // Cargar items del carrito en el checkout
+    loadCheckoutItems();
+
+    // Abrir modal
+    modal.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeCheckoutModal() {
+    var modal = document.getElementById('checkoutModal');
+    var overlay = document.getElementById('overlay');
+
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+function loadCheckoutItems() {
+    var checkoutItems = document.getElementById('checkoutItems');
+    var checkoutTotal = document.getElementById('checkoutTotal');
+
+    if (typeof cart === 'undefined' || cart.length === 0) {
+        checkoutItems.innerHTML = '<p>No hay items en el carrito</p>';
+        checkoutTotal.textContent = 'S/0';
+        return;
+    }
+
+    var html = '';
+    var total = 0;
+
+    cart.forEach(function(item) {
+        html += '<div class="checkout-item">';
+        html += '<div class="checkout-item-info">';
+        html += '<strong>' + item.name + '</strong>';
+        html += '<span>' + item.date + ' - ' + item.persons + ' persona(s)</span>';
+        html += '</div>';
+        html += '<div class="checkout-item-price">S/' + item.total + '</div>';
+        html += '</div>';
+        total += item.total;
+    });
+
+    checkoutItems.innerHTML = html;
+    checkoutTotal.textContent = 'S/' + total;
+}
+
+function processCheckout() {
+    var nombre = document.getElementById('checkoutNombre').value;
+    var email = document.getElementById('checkoutEmail').value;
+    var telefono = document.getElementById('checkoutTelefono').value;
+    var notas = document.getElementById('checkoutNotas').value;
+    var metodoPago = document.querySelector('input[name="metodoPago"]:checked').value;
+
+    if (!nombre || !email || !telefono) {
+        showToast('error', 'Error', 'Por favor completa todos los campos requeridos');
+        return;
+    }
+
+    // Construir mensaje de WhatsApp
+    var mensaje = '🌴 *NUEVA RESERVA - CIRCUITO TURISTICO PIURA*\n\n';
+    mensaje += '👤 *Cliente:* ' + nombre + '\n';
+    mensaje += '📧 *Email:* ' + email + '\n';
+    mensaje += '📱 *Telefono:* ' + telefono + '\n\n';
+    mensaje += '🎫 *EXPERIENCIAS RESERVADAS:*\n';
+
+    var total = 0;
+    cart.forEach(function(item, index) {
+        mensaje += (index + 1) + '. ' + item.name + '\n';
+        mensaje += '   📅 Fecha: ' + item.date + '\n';
+        mensaje += '   👥 Personas: ' + item.persons + '\n';
+        mensaje += '   💰 Precio: S/' + item.total + '\n\n';
+        total += item.total;
+    });
+
+    mensaje += '💳 *Metodo de pago:* ' + metodoPago.toUpperCase() + '\n';
+    mensaje += '💵 *TOTAL: S/' + total + '*\n\n';
+
+    if (notas) {
+        mensaje += '📝 *Notas:* ' + notas + '\n\n';
+    }
+
+    mensaje += '---\n';
+    mensaje += '_Reserva enviada desde la web_';
+
+    // Codificar mensaje para URL
+    var mensajeEncoded = encodeURIComponent(mensaje);
+    var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + mensajeEncoded;
+
+    // Tracking analytics
+    if (window.trackUserInteraction) {
+        trackUserInteraction('checkout', {
+            items: cart.length,
+            total: total,
+            paymentMethod: metodoPago
+        });
+    }
+
+    // Abrir WhatsApp
+    window.open(whatsappUrl, '_blank');
+
+    // Mostrar confirmacion
+    showToast('success', 'Reserva enviada', 'Completa tu reserva en WhatsApp');
+
+    // Limpiar carrito
+    cart = [];
+    updateCart();
+
+    // Cerrar modal
+    closeCheckoutModal();
+
+    // Resetear formulario
+    document.getElementById('checkoutForm').reset();
+}
+
+// Inicializar checkout cuando el DOM este listo
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        initCheckout();
+        console.log('Sistema de checkout inicializado');
+    }, 300);
+});
+
+// Exportar funciones
+window.openCheckoutModal = openCheckoutModal;
+window.closeCheckoutModal = closeCheckoutModal;
