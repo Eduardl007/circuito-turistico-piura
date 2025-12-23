@@ -906,11 +906,7 @@ function initForms() {
 // 12. MAPA INTERACTIVO (PLACEHOLDER)
 // ============================================
 
-function initMapPlaceholder() {
-    const mapContainer = document.getElementById('map');
-
-    // Create placeholder map
-    mapContainer.innerHTML = `
+function initMapPlaceholder() {    const mapContainer = document.getElementById('map');    // Si Leaflet esta disponible, no crear placeholder    if (typeof L !== 'undefined') {        console.log('Leaflet detectado - mapa sera inicializado por map.js');        return;    }    // Placeholder solo si Leaflet no esta disponible    mapContainer.innerHTML = `
         <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%); color: #666;">
             <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 1rem; color: #D4A574;"></i>
             <h3 style="margin-bottom: 0.5rem;">Mapa Interactivo</h3>
