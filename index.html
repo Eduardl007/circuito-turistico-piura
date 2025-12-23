@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Circuito Turístico Piura Catacaos - Descubre la artesanía, gastronomía y cultura del norte del Perú">
+    <title>Circuito Turístico Piura - Catacaos | Experiencias Auténticas</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-icon">
+                <i class="fas fa-sun"></i>
+            </div>
+            <p>Cargando experiencias...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="https://via.placeholder.com/50x50/D4A574/fff?text=CT" alt="Logo" class="logo-img">
+                    <span class="logo-text">
+                        <span class="logo-main">Circuito Turístico</span>
+                        <span class="logo-sub">Piura - Catacaos</span>
+                    </span>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#destinos" class="nav-link">Destinos</a></li>
+                    <li><a href="#experiencias" class="nav-link">Experiencias</a></li>
+                    <li><a href="#talleres" class="nav-link">Talleres</a></li>
+                    <li><a href="#gastronomia" class="nav-link">Gastronomía</a></li>
+                    <li><a href="#paquetes" class="nav-link">Paquetes</a></li>
+                    <li><a href="#mapa" class="nav-link">Mapa</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="btn-language" id="btnLanguage">
+                        <i class="fas fa-globe"></i>
+                        <span>ES</span>
+                    </button>
+                    <button class="btn-cart" id="btnCart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="btn-user" id="btnUser">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="nav-toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=1920')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920')">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <i class="fas fa-award"></i>
+                <span>Capital Artesanal del Perú</span>
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">
+                Descubre la Magia de<br>
+                <span class="highlight">Piura y Catacaos</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Vive experiencias únicas de artesanía ancestral, gastronomía tradicional
+                y cultura viva en el corazón del norte peruano
+            </p>
+
+            <div class="hero-search" data-aos="fade-up" data-aos-delay="300">
+                <div class="search-box">
+                    <div class="search-field">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="¿Qué quieres explorar?" id="heroSearch">
+                    </div>
+                    <div class="search-field">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" id="heroDate">
+                    </div>
+                    <div class="search-field">
+                        <i class="fas fa-users"></i>
+                        <select id="heroGuests">
+                            <option value="">Viajeros</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3-5">3-5 personas</option>
+                            <option value="6+">6+ personas</option>
+                        </select>
+                    </div>
+                    <button class="btn-search" id="btnSearch">
+                        <i class="fas fa-arrow-right"></i>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="195000">0</span>
+                    <span class="stat-label">Turistas en 2024</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Experiencias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="4.9">0</span>
+                    <span class="stat-label">Calificación</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <a href="#destinos">
+                <span>Explorar</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="features-bar">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Reserva Segura</h4>
+                        <p>Pago protegido 100%</p>
+                    </div>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-undo"></i>
+                    <div>
+                        <h4>Cancelación Flexible</h4>
+                        <p>Hasta 24h antes</p>
+                    </div>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h4>Soporte 24/7</h4>
+                        <p>Chatbot y WhatsApp</p>
+                    </div>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h4>Experiencias Verificadas</h4>
+                        <p>Proveedores locales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinos Section -->
+    <section id="destinos" class="section destinos">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Explora</span>
+                <h2>Destinos Imperdibles</h2>
+                <p>Conoce los lugares más emblemáticos de nuestra ruta turística</p>
+            </div>
+
+            <div class="destinos-grid">
+                <div class="destino-card large" data-aos="fade-up" data-aos-delay="0">
+                    <div class="destino-image" style="background-image: url('assets/images/Calle\ el\ comercio.jpg')">
+                        <div class="destino-overlay"></div>
+                        <div class="destino-badge">
+                            <i class="fas fa-star"></i> Más visitado
+                        </div>
+                    </div>
+                    <div class="destino-content">
+                        <div class="destino-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Catacaos, Piura
+                        </div>
+                        <h3>Calle Comercio</h3>
+                        <p>El corazón artesanal de Catacaos. Descubre la filigrana en plata, tejidos de paja toquilla y artesanía tradicional.</p>
+                        <div class="destino-meta">
+                            <span><i class="fas fa-clock"></i> 2-3 horas</span>
+                            <span><i class="fas fa-walking"></i> Fácil</span>
+                        </div>
+                        <a href="#" class="btn-destino" data-tour="calle-comercio">Explorar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destino-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="destino-image" style="background-image: url('./assets/images/Iglesia\ Catacaos.jpg')">
+                        <div class="destino-overlay"></div>
+                    </div>
+                    <div class="destino-content">
+                        <div class="destino-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Catacaos
+                        </div>
+                        <h3>Iglesia San Juan Bautista</h3>
+                        <p>Joya arquitectónica colonial con impresionantes murales en su cielo raso.</p>
+                        <a href="#" class="btn-destino" data-tour="iglesia">Ver más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destino-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="destino-image" style="background-image: url('assets/images/Narihuala.jpg">
+                        <div class="destino-overlay"></div>
+                    </div>
+                    <div class="destino-content">
+                        <div class="destino-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Narihualá
+                        </div>
+                        <h3>Complejo Arqueológico Narihualá</h3>
+                        <p>Vestigios de la cultura Tallán, civilización preincaica del norte peruano.</p>
+                        <a href="#" class="btn-destino" data-tour="narihuala">Ver más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destino-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="destino-image" style="background-image: url('assets/images/Piura.jpg')">
+                        <div class="destino-overlay"></div>
+                    </div>
+                    <div class="destino-content">
+                        <div class="destino-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Piura Centro
+                        </div>
+                        <h3>Plaza de Armas de Piura</h3>
+                        <p>El corazón de la ciudad, rodeada de arquitectura colonial y vida urbana.</p>
+                        <a href="#" class="btn-destino" data-tour="plaza">Ver más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destino-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="destino-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800')">
+                        <div class="destino-overlay"></div>
+                        <div class="destino-badge secondary">
+                            <i class="fas fa-umbrella-beach"></i> Extensión
+                        </div>
+                    </div>
+                    <div class="destino-content">
+                        <div class="destino-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Colán, Paita
+                        </div>
+                        <h3>Playas del Norte</h3>
+                        <p>Combina cultura con playa: Colán, Máncora, Vichayito y más.</p>
+                        <a href="#" class="btn-destino" data-tour="playas">Ver más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencias Section -->
+    <section id="experiencias" class="section experiencias">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Vive</span>
+                <h2>Experiencias Únicas</h2>
+                <p>Tours y actividades diseñadas para conectarte con la cultura local</p>
+            </div>
+
+            <div class="experiencias-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="artesania">Artesanía</button>
+                <button class="filter-btn" data-filter="gastronomia">Gastronomía</button>
+                <button class="filter-btn" data-filter="cultura">Cultura</button>
+                <button class="filter-btn" data-filter="aventura">Aventura</button>
+            </div>
+
+            <div class="experiencias-grid" id="experienciasGrid">
+                <!-- Tour 1 -->
+                <div class="exp-card" data-category="artesania cultura" data-aos="fade-up">
+                    <div class="exp-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600" alt="Tour Artesanal">
+                        <div class="exp-overlay">
+                            <button class="btn-quick-view" data-id="1">
+                                <i class="fas fa-eye"></i> Vista rápida
+                            </button>
+                        </div>
+                        <div class="exp-badges">
+                            <span class="badge-bestseller"><i class="fas fa-fire"></i> Más vendido</span>
+                        </div>
+                        <button class="btn-wishlist" data-id="1">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-category">
+                            <span class="cat-artesania"><i class="fas fa-gem"></i> Artesanía</span>
+                        </div>
+                        <h3>Circuito Artesanal Completo</h3>
+                        <p>Recorre los talleres de filigrana, paja toquilla y cerámica con maestros artesanos.</p>
+                        <div class="exp-details">
+                            <span><i class="fas fa-clock"></i> 6 horas</span>
+                            <span><i class="fas fa-users"></i> Max. 12</span>
+                            <span><i class="fas fa-language"></i> ES/EN</span>
+                        </div>
+                        <div class="exp-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (256 reseñas)</span>
+                        </div>
+                        <div class="exp-footer">
+                            <div class="exp-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-value">S/120</span>
+                                <span class="price-unit">/persona</span>
+                            </div>
+                            <button class="btn-reservar" data-id="1" data-name="Circuito Artesanal Completo" data-price="120">
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 2 -->
+                <div class="exp-card" data-category="gastronomia" data-aos="fade-up" data-aos-delay="100">
+                    <div class="exp-image">
+                        <img src="assets/images/Tour gastronómico.jpg" alt="Tour Gastronómico">
+                        <div class="exp-overlay">
+                            <button class="btn-quick-view" data-id="2">
+                                <i class="fas fa-eye"></i> Vista rápida
+                            </button>
+                        </div>
+                        <button class="btn-wishlist" data-id="2">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-category">
+                            <span class="cat-gastronomia"><i class="fas fa-utensils"></i> Gastronomía</span>
+                        </div>
+                        <h3>Tour Gastronómico Piurano</h3>
+                        <p>5 paradas culinarias: ceviche de mero, seco de chabelo, chicha de jora y más.</p>
+                        <div class="exp-details">
+                            <span><i class="fas fa-clock"></i> 4 horas</span>
+                            <span><i class="fas fa-users"></i> Max. 10</span>
+                            <span><i class="fas fa-language"></i> ES/EN</span>
+                        </div>
+                        <div class="exp-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (189 reseñas)</span>
+                        </div>
+                        <div class="exp-footer">
+                            <div class="exp-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-value">S/95</span>
+                                <span class="price-unit">/persona</span>
+                            </div>
+                            <button class="btn-reservar" data-id="2" data-name="Tour Gastronómico Piurano" data-price="95">
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 3 -->
+                <div class="exp-card" data-category="cultura" data-aos="fade-up" data-aos-delay="200">
+                    <div class="exp-image">
+                        <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=600" alt="Semana Santa">
+                        <div class="exp-overlay">
+                            <button class="btn-quick-view" data-id="3">
+                                <i class="fas fa-eye"></i> Vista rápida
+                            </button>
+                        </div>
+                        <div class="exp-badges">
+                            <span class="badge-seasonal"><i class="fas fa-calendar"></i> Estacional</span>
+                        </div>
+                        <button class="btn-wishlist" data-id="3">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-category">
+                            <span class="cat-cultura"><i class="fas fa-church"></i> Cultura</span>
+                        </div>
+                        <h3>Semana Santa en Catacaos</h3>
+                        <p>Vive la festividad más importante del norte: procesiones, siete potajes y tradiciones.</p>
+                        <div class="exp-details">
+                            <span><i class="fas fa-clock"></i> 3 días</span>
+                            <span><i class="fas fa-users"></i> Max. 20</span>
+                            <span><i class="fas fa-language"></i> ES</span>
+                        </div>
+                        <div class="exp-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>5.0 (98 reseñas)</span>
+                        </div>
+                        <div class="exp-footer">
+                            <div class="exp-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-value">S/450</span>
+                                <span class="price-unit">/persona</span>
+                            </div>
+                            <button class="btn-reservar" data-id="3" data-name="Semana Santa en Catacaos" data-price="450">
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 4 -->
+                <div class="exp-card" data-category="aventura" data-aos="fade-up" data-aos-delay="300">
+                    <div class="exp-image">
+                        <img src="assets/images/Catacaos de noche.jpg" alt="Catacaos Nocturno">
+                        <div class="exp-overlay">
+                            <button class="btn-quick-view" data-id="4">
+                                <i class="fas fa-eye"></i> Vista rápida
+                            </button>
+                        </div>
+                        <button class="btn-wishlist" data-id="4">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-category">
+                            <span class="cat-aventura"><i class="fas fa-moon"></i> Nocturno</span>
+                        </div>
+                        <h3>Catacaos de Noche</h3>
+                        <p>Chicherías tradicionales, peñas criollas, música en vivo y sabores nocturnos.</p>
+                        <div class="exp-details">
+                            <span><i class="fas fa-clock"></i> 4 horas</span>
+                            <span><i class="fas fa-users"></i> Max. 15</span>
+                            <span><i class="fas fa-language"></i> ES</span>
+                        </div>
+                        <div class="exp-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span>4.5 (67 reseñas)</span>
+                        </div>
+                        <div class="exp-footer">
+                            <div class="exp-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-value">S/85</span>
+                                <span class="price-unit">/persona</span>
+                            </div>
+                            <button class="btn-reservar" data-id="4" data-name="Catacaos de Noche" data-price="85">
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 5 -->
+                <div class="exp-card" data-category="cultura artesania" data-aos="fade-up">
+                    <div class="exp-image">
+                        <img src="assets/images/Narihuala.jpg" alt="Narihualá">
+                        <div class="exp-overlay">
+                            <button class="btn-quick-view" data-id="5">
+                                <i class="fas fa-eye"></i> Vista rápida
+                            </button>
+                        </div>
+                        <button class="btn-wishlist" data-id="5">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-category">
+                            <span class="cat-cultura"><i class="fas fa-landmark"></i> Arqueología</span>
+                        </div>
+                        <h3>Narihualá Ancestral</h3>
+                        <p>Explora el legado de la cultura Tallán con guías especializados en historia preinca.</p>
+                        <div class="exp-details">
+                            <span><i class="fas fa-clock"></i> 3 horas</span>
+                            <span><i class="fas fa-users"></i> Max. 15</span>
+                            <span><i class="fas fa-language"></i> ES/EN</span>
+                        </div>
+                        <div class="exp-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.7 (124 reseñas)</span>
+                        </div>
+                        <div class="exp-footer">
+                            <div class="exp-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-value">S/75</span>
+                                <span class="price-unit">/persona</span>
+                            </div>
+                            <button class="btn-reservar" data-id="5" data-name="Narihualá Ancestral" data-price="75">
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 6 -->
+                <div class="exp-card" data-category="aventura" data-aos="fade-up" data-aos-delay="100">
+                    <div class="exp-image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="Playa y Cultura">
+                        <div class="exp-overlay">
+                            <button class="btn-quick-view" data-id="6">
+                                <i class="fas fa-eye"></i> Vista rápida
+                            </button>
+                        </div>
+                        <div class="exp-badges">
+                            <span class="badge-new"><i class="fas fa-sparkles"></i> Nuevo</span>
+                        </div>
+                        <button class="btn-wishlist" data-id="6">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-category">
+                            <span class="cat-aventura"><i class="fas fa-umbrella-beach"></i> Playa + Cultura</span>
+                        </div>
+                        <h3>Catacaos + Colán</h3>
+                        <p>Lo mejor de dos mundos: artesanía por la mañana y playa por la tarde.</p>
+                        <div class="exp-details">
+                            <span><i class="fas fa-clock"></i> Full day</span>
+                            <span><i class="fas fa-users"></i> Max. 12</span>
+                            <span><i class="fas fa-language"></i> ES/EN</span>
+                        </div>
+                        <div class="exp-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (45 reseñas)</span>
+                        </div>
+                        <div class="exp-footer">
+                            <div class="exp-price">
+                                <span class="price-from">Desde</span>
+                                <span class="price-value">S/180</span>
+                                <span class="price-unit">/persona</span>
+                            </div>
+                            <button class="btn-reservar" data-id="6" data-name="Catacaos + Colán" data-price="180">
+                                Reservar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4" data-aos="fade-up">
+                <button class="btn-primary btn-lg" id="btnVerMas">
+                    Ver todas las experiencias <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talleres Section -->
+    <section id="talleres" class="section talleres">
+        <div class="container">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-badge">Aprende</span>
+                <h2>Talleres Vivenciales</h2>
+                <p>Conviértete en artesano por un día y llévate una pieza única hecha por ti</p>
+            </div>
+
+            <div class="talleres-grid">
+                <!-- Taller 1 -->
+                <div class="taller-card" data-aos="fade-up">
+                    <div class="taller-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="taller-content">
+                        <h3>Filigrana en Plata</h3>
+                        <p>Aprende la técnica ancestral de crear joyas con hilos de plata más finos que un cabello.</p>
+                        <ul class="taller-features">
+                            <li><i class="fas fa-check"></i> Materiales incluidos</li>
+                            <li><i class="fas fa-check"></i> Maestro artesano certificado</li>
+                            <li><i class="fas fa-check"></i> Llévate tu creación</li>
+                            <li><i class="fas fa-check"></i> Certificado de participación</li>
+                        </ul>
+                        <div class="taller-meta">
+                            <span><i class="fas fa-clock"></i> 3 horas</span>
+                            <span><i class="fas fa-users"></i> 2-6 personas</span>
+                        </div>
+                        <div class="taller-footer">
+                            <span class="taller-price">S/200 <small>/persona</small></span>
+                            <button class="btn-taller" data-id="t1" data-name="Taller de Filigrana" data-price="200">
+                                Inscribirme
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taller 2 -->
+                <div class="taller-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="taller-icon">
+                        <i class="fas fa-hat-cowboy"></i>
+                    </div>
+                    <div class="taller-content">
+                        <h3>Tejido Paja Toquilla</h3>
+                        <p>Domina las técnicas de tejido que han hecho famosos los sombreros de Catacaos.</p>
+                        <ul class="taller-features">
+                            <li><i class="fas fa-check"></i> Paja toquilla premium</li>
+                            <li><i class="fas fa-check"></i> Técnicas tradicionales</li>
+                            <li><i class="fas fa-check"></i> Refrigerio incluido</li>
+                            <li><i class="fas fa-check"></i> Fotos profesionales</li>
+                        </ul>
+                        <div class="taller-meta">
+                            <span><i class="fas fa-clock"></i> 2 horas</span>
+                            <span><i class="fas fa-users"></i> 2-8 personas</span>
+                        </div>
+                        <div class="taller-footer">
+                            <span class="taller-price">S/80 <small>/persona</small></span>
+                            <button class="btn-taller" data-id="t2" data-name="Taller Paja Toquilla" data-price="80">
+                                Inscribirme
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taller 3 -->
+                <div class="taller-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="taller-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="taller-content">
+                        <h3>Cocina Piurana</h3>
+                        <p>Prepara seco de chabelo, ceviche de mero y otros clásicos con chefs locales.</p>
+                        <ul class="taller-features">
+                            <li><i class="fas fa-check"></i> Ingredientes frescos locales</li>
+                            <li><i class="fas fa-check"></i> Recetario digital</li>
+                            <li><i class="fas fa-check"></i> Degustación completa</li>
+                            <li><i class="fas fa-check"></i> Maridaje con chicha</li>
+                        </ul>
+                        <div class="taller-meta">
+                            <span><i class="fas fa-clock"></i> 4 horas</span>
+                            <span><i class="fas fa-users"></i> 2-10 personas</span>
+                        </div>
+                        <div class="taller-footer">
+                            <span class="taller-price">S/150 <small>/persona</small></span>
+                            <button class="btn-taller" data-id="t3" data-name="Taller Cocina Piurana" data-price="150">
+                                Inscribirme
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taller 4 -->
+                <div class="taller-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="taller-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="taller-content">
+                        <h3>Cerámica Tallán</h3>
+                        <p>Crea piezas de cerámica inspiradas en la iconografía de la cultura Tallán.</p>
+                        <ul class="taller-features">
+                            <li><i class="fas fa-check"></i> Arcilla de la región</li>
+                            <li><i class="fas fa-check"></i> Historia y simbolismo</li>
+                            <li><i class="fas fa-check"></i> Horneado incluido</li>
+                            <li><i class="fas fa-check"></i> Envío a domicilio</li>
+                        </ul>
+                        <div class="taller-meta">
+                            <span><i class="fas fa-clock"></i> 3 horas</span>
+                            <span><i class="fas fa-users"></i> 2-8 personas</span>
+                        </div>
+                        <div class="taller-footer">
+                            <span class="taller-price">S/100 <small>/persona</small></span>
+                            <button class="btn-taller" data-id="t4" data-name="Taller Cerámica Tallán" data-price="100">
+                                Inscribirme
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capacitaciones Empresariales -->
+            <div class="capacitaciones-section" data-aos="fade-up">
+                <div class="capacitaciones-header">
+                    <h3><i class="fas fa-building"></i> Programas Empresariales y Educativos</h3>
+                    <p>Experiencias de team building y capacitaciones para grupos</p>
+                </div>
+                <div class="capacitaciones-grid">
+                    <div class="cap-item">
+                        <i class="fas fa-users-cog"></i>
+                        <h4>Team Building Artesanal</h4>
+                        <p>Fortalece tu equipo creando juntos</p>
+                        <span class="cap-price">Desde S/2,500 (10 personas)</span>
+                    </div>
+                    <div class="cap-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Excursiones Educativas</h4>
+                        <p>Para colegios y universidades</p>
+                        <span class="cap-price">Desde S/50/estudiante</span>
+                    </div>
+                    <div class="cap-item">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Retiros Corporativos</h4>
+                        <p>Cultura + networking + gastronomía</p>
+                        <span class="cap-price">Cotización personalizada</span>
+                    </div>
+                    <div class="cap-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h4>Capacitación en Turismo</h4>
+                        <p>Para operadores y guías locales</p>
+                        <span class="cap-price">Desde S/300/persona</span>
+                    </div>
+                </div>
+                <button class="btn-cotizar" id="btnCotizar">
+                    <i class="fas fa-file-invoice"></i> Solicitar cotización
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gastronomía Section -->
+    <section id="gastronomia" class="section gastronomia">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Saborea</span>
+                <h2>Gastronomía Piurana</h2>
+                <p>Descubre los sabores que hacen de Piura un destino culinario imperdible</p>
+            </div>
+
+            <div class="gastronomia-showcase">
+                <div class="gastro-main" data-aos="fade-right">
+                    <div class="gastro-featured" id="gastroFeatured">
+                        <img src="./assets/images/Seco de chavelo.jpg" alt="Seco de Chabelo" id="gastroImage">
+                        <div class="gastro-info">
+                            <h3 id="gastroTitle">Seco de Chabelo</h3>
+                            <p id="gastroDesc">El plato bandera de Piura: plátano verde machacado con carne seca (cecina), cocido en un aderezo criollo con chicha de jora.</p>
+                            <div class="gastro-tags">
+                                <span><i class="fas fa-fire"></i> Plato principal</span>
+                                <span><i class="fas fa-leaf"></i> Tradicional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gastro-list" data-aos="fade-left">
+                    <div class="gastro-item active" data-image="assets/images/Seco de chavelo.jpg" data-title="Seco de Chabelo" data-desc="El plato bandera de Piura: plátano verde machacado con carne seca (cecina), cocido en un aderezo criollo con chicha de jora.">
+                        <div class="gastro-thumb">
+                            <img src="assets/images/Seco de chavelo.jpg" alt="Seco de Chabelo">
+                        </div>
+                        <div class="gastro-text">
+                            <h4>Seco de Chabelo</h4>
+                            <span>Plato bandera de Piura</span>
+                        </div>
+                    </div>
+
+                    <div class="gastro-item" data-image="assets/images/Ceviche de mero.jpg" data-title="Ceviche de Mero" data-desc="El auténtico ceviche piurano: mero fresco marinado en limón con ají limo, acompañado de camote, choclo y zarandaja.">
+                        <div class="gastro-thumb">
+                            <img src="assets/images/Ceviche de mero.jpg" alt="Ceviche">
+                        </div>
+                        <div class="gastro-text">
+                            <h4>Ceviche de Mero</h4>
+                            <span>El sabor del mar piurano</span>
+                        </div>
+                    </div>
+
+                    <div class="gastro-item" data-image="assets/images/Malarabia.jpg" data-title="Malarrabia" data-desc="Plato tradicional de Semana Santa: arroz, menestras y plátano maduro sancochado con pescado frito o sudado.">
+                        <div class="gastro-thumb">
+                            <img src="assets/images/Malarabia.jpg" alt="Malarrabia">
+                        </div>
+                        <div class="gastro-text">
+                            <h4>Malarrabia</h4>
+                            <span>Tradición de Semana Santa</span>
+                        </div>
+                    </div>
+
+                    <div class="gastro-item" data-image="assets/images/Chifles.jpg" data-title="Chifles" data-desc="El snack piurano por excelencia: rodajas de plátano verde fritas hasta quedar crujientes, perfectas para acompañar cualquier plato.">
+                        <div class="gastro-thumb">
+                            <img src="assets/images/Chifles.jpg" alt="Chifles">
+                        </div>
+                        <div class="gastro-text">
+                            <h4>Chifles</h4>
+                            <span>El snack tradicional</span>
+                        </div>
+                    </div>
+
+                    <div class="gastro-item" data-image="assets/images/Chicha de jora.jpg" data-title="Chicha de Jora" data-desc="Bebida ancestral fermentada de maíz de jora, herencia precolombina que aún se prepara en las chicherías de Catacaos.">
+                        <div class="gastro-thumb">
+                            <img src="assets/images/Chicha de jora.jpg" alt="Chicha de Jora">
+                        </div>
+                        <div class="gastro-text">
+                            <h4>Chicha de Jora</h4>
+                            <span>Bebida ancestral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurantes-section" data-aos="fade-up">
+                <h3><i class="fas fa-store"></i> Restaurantes Recomendados</h3>
+                <div class="restaurantes-grid">
+                    <div class="rest-card">
+                        <div class="rest-rating">
+                            <i class="fas fa-star"></i> 4.8
+                        </div>
+                        <h4>El Cantarito</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Catacaos</p>
+                        <span class="rest-price">S/ - S/S/</span>
+                        <button class="btn-reservar-rest" data-rest="cantarito">Reservar mesa</button>
+                    </div>
+                    <div class="rest-card">
+                        <div class="rest-rating">
+                            <i class="fas fa-star"></i> 4.9
+                        </div>
+                        <h4>La Chayo</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Catacaos</p>
+                        <span class="rest-price">S/ - S/S/</span>
+                        <button class="btn-reservar-rest" data-rest="chayo">Reservar mesa</button>
+                    </div>
+                    <div class="rest-card">
+                        <div class="rest-rating">
+                            <i class="fas fa-star"></i> 4.7
+                        </div>
+                        <h4>Doña Pepa</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Piura Centro</p>
+                        <span class="rest-price">S/S/ - S/S/S/</span>
+                        <button class="btn-reservar-rest" data-rest="pepa">Reservar mesa</button>
+                    </div>
+                    <div class="rest-card">
+                        <div class="rest-rating">
+                            <i class="fas fa-star"></i> 4.6
+                        </div>
+                        <h4>Picantería La Santitos</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Catacaos</p>
+                        <span class="rest-price">S/ - S/S/</span>
+                        <button class="btn-reservar-rest" data-rest="santitos">Reservar mesa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes Section -->
+    <section id="paquetes" class="section paquetes">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Ahorra</span>
+                <h2>Paquetes Turísticos</h2>
+                <p>Combina experiencias y obtén los mejores precios</p>
+            </div>
+
+            <div class="paquetes-grid">
+                <!-- Paquete Básico -->
+                <div class="paquete-card" data-aos="fade-up">
+                    <div class="paquete-header">
+                        <span class="paquete-badge">Esencial</span>
+                        <h3>Catacaos Express</h3>
+                        <p class="paquete-duration"><i class="fas fa-clock"></i> 1 día</p>
+                    </div>
+                    <div class="paquete-price">
+                        <span class="price-old">S/180</span>
+                        <span class="price-new">S/149</span>
+                        <span class="price-person">/persona</span>
+                    </div>
+                    <ul class="paquete-includes">
+                        <li><i class="fas fa-check"></i> Transporte ida y vuelta</li>
+                        <li><i class="fas fa-check"></i> Guía bilingüe</li>
+                        <li><i class="fas fa-check"></i> Recorrido Calle Comercio</li>
+                        <li><i class="fas fa-check"></i> Almuerzo típico</li>
+                        <li><i class="fas fa-check"></i> Visita a talleres</li>
+                        <li class="not-included"><i class="fas fa-times"></i> Taller práctico</li>
+                        <li class="not-included"><i class="fas fa-times"></i> Hospedaje</li>
+                    </ul>
+                    <div class="paquete-footer">
+                        <button class="btn-paquete" data-id="p1" data-name="Catacaos Express" data-price="149">
+                            Reservar ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paquete Intermedio -->
+                <div class="paquete-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="featured-badge">Más popular</div>
+                    <div class="paquete-header">
+                        <span class="paquete-badge">Completo</span>
+                        <h3>Experiencia Total</h3>
+                        <p class="paquete-duration"><i class="fas fa-clock"></i> 2 días / 1 noche</p>
+                    </div>
+                    <div class="paquete-price">
+                        <span class="price-old">S/450</span>
+                        <span class="price-new">S/379</span>
+                        <span class="price-person">/persona</span>
+                    </div>
+                    <ul class="paquete-includes">
+                        <li><i class="fas fa-check"></i> Todo lo del paquete Express</li>
+                        <li><i class="fas fa-check"></i> 1 noche de hospedaje</li>
+                        <li><i class="fas fa-check"></i> Desayuno incluido</li>
+                        <li><i class="fas fa-check"></i> Taller de filigrana o cocina</li>
+                        <li><i class="fas fa-check"></i> Tour gastronómico</li>
+                        <li><i class="fas fa-check"></i> Visita a Narihualá</li>
+                        <li><i class="fas fa-check"></i> Souvenir artesanal</li>
+                    </ul>
+                    <div class="paquete-footer">
+                        <button class="btn-paquete primary" data-id="p2" data-name="Experiencia Total" data-price="379">
+                            Reservar ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paquete Premium -->
+                <div class="paquete-card premium" data-aos="fade-up" data-aos-delay="200">
+                    <div class="paquete-header">
+                        <span class="paquete-badge">Premium</span>
+                        <h3>Piura Completo</h3>
+                        <p class="paquete-duration"><i class="fas fa-clock"></i> 4 días / 3 noches</p>
+                    </div>
+                    <div class="paquete-price">
+                        <span class="price-old">S/1,200</span>
+                        <span class="price-new">S/999</span>
+                        <span class="price-person">/persona</span>
+                    </div>
+                    <ul class="paquete-includes">
+                        <li><i class="fas fa-check"></i> Todo lo del paquete Completo</li>
+                        <li><i class="fas fa-check"></i> 3 noches hotel 4 estrellas</li>
+                        <li><i class="fas fa-check"></i> Día de playa (Colán/Máncora)</li>
+                        <li><i class="fas fa-check"></i> 2 talleres a elección</li>
+                        <li><i class="fas fa-check"></i> Cena de gala</li>
+                        <li><i class="fas fa-check"></i> Transfer aeropuerto</li>
+                        <li><i class="fas fa-check"></i> Seguro de viaje</li>
+                    </ul>
+                    <div class="paquete-footer">
+                        <button class="btn-paquete" data-id="p3" data-name="Piura Completo" data-price="999">
+                            Reservar ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paquetes Estacionales -->
+            <div class="seasonal-packages" data-aos="fade-up">
+                <h3><i class="fas fa-calendar-star"></i> Paquetes de Temporada</h3>
+                <div class="seasonal-grid">
+                    <div class="seasonal-card">
+                        <div class="seasonal-image" style="background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=600')">
+                            <div class="seasonal-overlay"></div>
+                            <span class="seasonal-date"><i class="fas fa-calendar"></i> Abril 2025</span>
+                        </div>
+                        <div class="seasonal-content">
+                            <h4>Semana Santa Viva</h4>
+                            <p>Vive la festividad más importante del norte peruano</p>
+                            <div class="seasonal-price">
+                                <span>Desde S/650</span>
+                                <button class="btn-seasonal">Ver detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seasonal-card">
+                        <div class="seasonal-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600')">
+                            <div class="seasonal-overlay"></div>
+                            <span class="seasonal-date"><i class="fas fa-calendar"></i> Dic - Mar</span>
+                        </div>
+                        <div class="seasonal-content">
+                            <h4>Verano Artesanal</h4>
+                            <p>Combina cultura con las mejores playas del norte</p>
+                            <div class="seasonal-price">
+                                <span>Desde S/899</span>
+                                <button class="btn-seasonal">Ver detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Section -->
+    <section id="mapa" class="section mapa">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Explora</span>
+                <h2>Mapa Interactivo</h2>
+                <p>Descubre todos los puntos de interés del circuito turístico</p>
+            </div>
+
+            <div class="mapa-container" data-aos="fade-up">
+                <div class="mapa-sidebar">
+                    <div class="mapa-search">
+                        <input type="text" placeholder="Buscar lugar..." id="mapaSearch">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="mapa-filters">
+                        <button class="map-filter active" data-filter="all">
+                            <i class="fas fa-layer-group"></i> Todos
+                        </button>
+                        <button class="map-filter" data-filter="artesania">
+                            <i class="fas fa-gem"></i> Artesanía
+                        </button>
+                        <button class="map-filter" data-filter="gastronomia">
+                            <i class="fas fa-utensils"></i> Gastronomía
+                        </button>
+                        <button class="map-filter" data-filter="cultura">
+                            <i class="fas fa-landmark"></i> Cultura
+                        </button>
+                        <button class="map-filter" data-filter="hospedaje">
+                            <i class="fas fa-bed"></i> Hospedaje
+                        </button>
+                    </div>
+
+                    <div class="mapa-places" id="mapaPlaces">
+                        <div class="place-item" data-lat="-5.1945" data-lng="-80.6286" data-type="artesania"
+                             data-image="assets/images/Calle el comercio.jpg"
+                             data-title="Calle Comercio"
+                             data-desc="El corazón artesanal de Catacaos. Aquí encontrarás filigrana en plata, tejidos de paja toquilla, cerámicas y artesanías tradicionales elaboradas por maestros artesanos."
+                             data-horario="Lunes a Domingo: 8:00 AM - 6:00 PM"
+                             data-precio="Entrada libre">
+                            <div class="place-icon artesania">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="place-info">
+                                <h4>Calle Comercio</h4>
+                                <p>Centro artesanal de Catacaos</p>
+                                <span class="place-distance"><i class="fas fa-walking"></i> 12 km desde Piura</span>
+                            </div>
+                        </div>
+                        <div class="place-item" data-lat="-5.1960" data-lng="-80.6275" data-type="cultura"
+                             data-image="assets/images/Iglesia Catacaos.jpg"
+                             data-title="Iglesia San Juan Bautista"
+                             data-desc="Joya arquitectónica colonial construida en el siglo XVII. Destaca por sus impresionantes murales en el cielo raso y su altar bañado en pan de oro."
+                             data-horario="Lunes a Sábado: 7:00 AM - 12:00 PM y 4:00 PM - 7:00 PM"
+                             data-precio="Entrada libre">
+                            <div class="place-icon cultura">
+                                <i class="fas fa-church"></i>
+                            </div>
+                            <div class="place-info">
+                                <h4>Iglesia San Juan Bautista</h4>
+                                <p>Joya arquitectónica colonial</p>
+                                <span class="place-distance"><i class="fas fa-walking"></i> 200m de Calle Comercio</span>
+                            </div>
+                        </div>
+                        <div class="place-item" data-lat="-5.1800" data-lng="-80.6100" data-type="cultura"
+                             data-image="assets/images/Narihuala.jpg"
+                             data-title="Complejo Arqueológico Narihualá"
+                             data-desc="Vestigios de la cultura Tallán, civilización preincaica del norte peruano. Incluye pirámides de adobe, museo de sitio y área de interpretación cultural."
+                             data-horario="Martes a Domingo: 9:00 AM - 5:00 PM"
+                             data-precio="S/5.00 adultos - S/2.00 estudiantes">
+                            <div class="place-icon cultura">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="place-info">
+                                <h4>Narihualá</h4>
+                                <p>Complejo arqueológico Tallán</p>
+                                <span class="place-distance"><i class="fas fa-car"></i> 5 km desde Catacaos</span>
+                            </div>
+                        </div>
+                        <div class="place-item" data-lat="-5.1945" data-lng="-80.6320" data-type="gastronomia"
+                             data-image="assets/images/Gastronomia.jpg"
+                             data-title="El Cantarito"
+                             data-desc="Restaurante tradicional piurano famoso por su seco de chabelo, ceviche de mero y chicha de jora. Ambiente rústico y auténtico sabor norteño."
+                             data-horario="Lunes a Domingo: 11:00 AM - 5:00 PM"
+                             data-precio="Platos desde S/25.00">
+                            <div class="place-icon gastronomia">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="place-info">
+                                <h4>El Cantarito</h4>
+                                <p>Restaurante tradicional</p>
+                                <span class="place-distance"><i class="fas fa-star"></i> 4.8 (256 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="place-item" data-lat="-5.1978" data-lng="-80.6284" data-type="artesania"
+                             data-image="assets/images/Experiencia artesanal.jpg"
+                             data-title="Taller Filigrana Yarlequé"
+                             data-desc="Taller del maestro artesano reconocido como Patrimonio Cultural. Ofrece demostraciones en vivo y talleres prácticos de filigrana en plata."
+                             data-horario="Lunes a Sábado: 9:00 AM - 6:00 PM"
+                             data-precio="Demostración: S/10.00 - Taller: S/200.00">
+                            <div class="place-icon artesania">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <div class="place-info">
+                                <h4>Taller Filigrana Yarlequé</h4>
+                                <p>Maestro artesano certificado</p>
+                                <span class="place-distance"><i class="fas fa-certificate"></i> Patrimonio Cultural</span>
+                            </div>
+                        </div>
+                        <div class="place-item" data-lat="-5.1940" data-lng="-80.6250" data-type="hospedaje"
+                             data-image="assets/images/Plaza Catacaos.jpg"
+                             data-title="Hospedaje Casa del Artesano"
+                             data-desc="Experiencia de turismo vivencial. Alojamiento en casa de familia artesana con desayuno típico incluido y opción de participar en talleres."
+                             data-horario="Check-in: 2:00 PM - Check-out: 12:00 PM"
+                             data-precio="Desde S/80.00 por noche">
+                            <div class="place-icon hospedaje">
+                                <i class="fas fa-bed"></i>
+                            </div>
+                            <div class="place-info">
+                                <h4>Hospedaje Casa del Artesano</h4>
+                                <p>Turismo vivencial</p>
+                                <span class="place-distance"><i class="fas fa-star"></i> 4.7 (89 reseñas)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mapa-frame">
+                    <!-- Panel de detalle del lugar seleccionado -->
+                    <div class="place-detail-panel" id="placeDetailPanel">
+                        <button class="close-detail" id="closeDetail"><i class="fas fa-times"></i></button>
+                        <div class="detail-image">
+                            <img src="" alt="" id="detailImage">
+                        </div>
+                        <div class="detail-content">
+                            <h3 id="detailTitle"></h3>
+                            <p id="detailDesc"></p>
+                            <div class="detail-info">
+                                <div class="info-row">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="detailHorario"></span>
+                                </div>
+                                <div class="info-row">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <span id="detailPrecio"></span>
+                                </div>
+                                <div class="info-row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="detailCoords"></span>
+                                </div>
+                            </div>
+                            <button class="btn-como-llegar" id="btnComoLlegar">
+                                <i class="fas fa-directions"></i> Cómo llegar
+                            </button>
+                        </div>
+                    </div>
+                    <div id="map"></div>
+                    <div class="map-controls">
+                        <button class="map-ctrl" id="btnZoomIn" title="Acercar">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="map-ctrl" id="btnZoomOut" title="Alejar">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button class="map-ctrl" id="btnMyLocation" title="Mi ubicación">
+                            <i class="fas fa-location-arrow"></i>
+                        </button>
+                        <button class="map-ctrl" id="btnFullscreen" title="Pantalla completa">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mapa-legend" data-aos="fade-up">
+                <h4>Leyenda</h4>
+                <div class="legend-items">
+                    <span><i class="fas fa-gem" style="color: #D4A574"></i> Artesanía</span>
+                    <span><i class="fas fa-utensils" style="color: #E57373"></i> Gastronomía</span>
+                    <span><i class="fas fa-landmark" style="color: #7986CB"></i> Cultura</span>
+                    <span><i class="fas fa-bed" style="color: #81C784"></i> Hospedaje</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="section testimonios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Opiniones</span>
+                <h2>Lo que dicen nuestros viajeros</h2>
+                <p>Experiencias reales de quienes ya vivieron la magia del norte</p>
+            </div>
+
+            <div class="testimonios-slider" data-aos="fade-up">
+                <div class="testimonios-track" id="testimoniosTrack">
+                    <div class="testimonio-card">
+                        <div class="testimonio-header">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María García">
+                            <div class="testimonio-author">
+                                <h4>María García</h4>
+                                <span>Lima, Perú</span>
+                            </div>
+                            <div class="testimonio-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio-text">"El taller de filigrana fue increíble. El maestro artesano me enseñó con mucha paciencia y me llevé un par de aretes que hice yo misma. ¡Una experiencia única!"</p>
+                        <div class="testimonio-tour">
+                            <i class="fas fa-route"></i> Taller de Filigrana
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card">
+                        <div class="testimonio-header">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Rodriguez">
+                            <div class="testimonio-author">
+                                <h4>Carlos Rodriguez</h4>
+                                <span>Buenos Aires, Argentina</span>
+                            </div>
+                            <div class="testimonio-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio-text">"El tour gastronómico superó todas mis expectativas. El seco de chabelo es de otro mundo y la chicha de jora en las chicherías tradicionales es imperdible."</p>
+                        <div class="testimonio-tour">
+                            <i class="fas fa-route"></i> Tour Gastronómico
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card">
+                        <div class="testimonio-header">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Johnson">
+                            <div class="testimonio-author">
+                                <h4>Sarah Johnson</h4>
+                                <span>New York, USA</span>
+                            </div>
+                            <div class="testimonio-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio-text">"I loved visiting Catacaos! The silver filigree artisans are true masters. The guide spoke excellent English and made the experience even more special."</p>
+                        <div class="testimonio-tour">
+                            <i class="fas fa-route"></i> Circuito Artesanal
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card">
+                        <div class="testimonio-header">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="José Pérez">
+                            <div class="testimonio-author">
+                                <h4>José Pérez</h4>
+                                <span>Chiclayo, Perú</span>
+                            </div>
+                            <div class="testimonio-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio-text">"Llevé a mi familia durante Semana Santa y fue mágico. Las procesiones, los siete potajes, todo muy bien organizado. Definitivamente volveremos."</p>
+                        <div class="testimonio-tour">
+                            <i class="fas fa-route"></i> Semana Santa
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonios-nav">
+                    <button class="test-nav-btn" id="testPrev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonios-dots" id="testimoniosDots"></div>
+                    <button class="test-nav-btn" id="testNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="testimonios-stats" data-aos="fade-up">
+                <div class="test-stat">
+                    <span class="test-stat-number">4.8</span>
+                    <span class="test-stat-label">Calificación promedio</span>
+                    <div class="test-stat-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="test-stat">
+                    <span class="test-stat-number">2,500+</span>
+                    <span class="test-stat-label">Reseñas verificadas</span>
+                </div>
+                <div class="test-stat">
+                    <span class="test-stat-number">98%</span>
+                    <span class="test-stat-label">Recomendarían</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <h2>No te pierdas ninguna promoción</h2>
+                    <p>Suscríbete y recibe ofertas exclusivas, nuevas experiencias y tips de viaje</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Tu correo electrónico" required id="newsletterEmail">
+                        <button type="submit">
+                            <span>Suscribirme</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Acepto recibir comunicaciones y la política de privacidad</span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="section contacto">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Contacto</span>
+                <h2>¿Tienes preguntas?</h2>
+                <p>Estamos aquí para ayudarte a planificar tu viaje perfecto</p>
+            </div>
+
+            <div class="contacto-grid">
+                <div class="contacto-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Oficina Principal</h4>
+                            <p>Av. Grau 123, Piura, Perú</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Teléfono</h4>
+                            <p>+51 (73) 123-4567</p>
+                            <p class="info-sub">Lun - Sáb: 8am - 8pm</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>WhatsApp</h4>
+                            <p>+51 999 888 777</p>
+                            <p class="info-sub">Respuesta en minutos</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>info@circuitopiura.com</p>
+                            <p class="info-sub">reservas@circuitopiura.com</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Síguenos</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="asunto">Asunto *</label>
+                                <select id="asunto" name="asunto" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="reserva">Consulta sobre reserva</option>
+                                    <option value="paquetes">Información de paquetes</option>
+                                    <option value="grupos">Grupos y corporativo</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos sobre tu viaje ideal..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <span>Enviar mensaje</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="https://via.placeholder.com/50x50/D4A574/fff?text=CT" alt="Logo">
+                        <span>Circuito Turístico<br>Piura - Catacaos</span>
+                    </a>
+                    <p>Tu puerta de entrada a la cultura, artesanía y gastronomía del norte peruano.</p>
+                    <div class="footer-badges">
+                        <img src="https://via.placeholder.com/80x40/fff/333?text=MINCETUR" alt="MINCETUR">
+                        <img src="https://via.placeholder.com/80x40/fff/333?text=PromPerú" alt="PromPerú">
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explorar</h4>
+                    <ul>
+                        <li><a href="#destinos">Destinos</a></li>
+                        <li><a href="#experiencias">Experiencias</a></li>
+                        <li><a href="#talleres">Talleres</a></li>
+                        <li><a href="#paquetes">Paquetes</a></li>
+                        <li><a href="#gastronomia">Gastronomía</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Política de cancelación</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Para proveedores</h4>
+                    <ul>
+                        <li><a href="#">Únete como artesano</a></li>
+                        <li><a href="#">Registra tu restaurante</a></li>
+                        <li><a href="#">Sé guía turístico</a></li>
+                        <li><a href="#">Portal de proveedores</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Métodos de pago</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <span class="payment-local">Yape</span>
+                        <span class="payment-local">Plin</span>
+                    </div>
+                    <h4>Seguridad</h4>
+                    <div class="security-badges">
+                        <span><i class="fas fa-lock"></i> SSL Seguro</span>
+                        <span><i class="fas fa-shield-alt"></i> Datos protegidos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Circuito Turístico Piura - Catacaos. Todos los derechos reservados.</p>
+                <p>Desarrollado con <i class="fas fa-heart" style="color: #E57373"></i> en Piura, Perú</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">1</span>
+        </button>
+
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <img src="https://via.placeholder.com/40x40/D4A574/fff?text=CP" alt="Cholo Piurano">
+                </div>
+                <div class="chatbot-info">
+                    <h4>Cholo Piurano</h4>
+                    <span class="chatbot-status"><i class="fas fa-circle"></i> En línea</span>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-message bot">
+                    <div class="message-avatar">
+                        <img src="https://via.placeholder.com/30x30/D4A574/fff?text=CP" alt="Bot">
+                    </div>
+                    <div class="message-content">
+                        <p>¡Hola! Soy el Cholo Piurano, tu asistente virtual. ¿En qué puedo ayudarte hoy?</p>
+                        <div class="message-time">Ahora</div>
+                    </div>
+                </div>
+
+                <div class="chat-suggestions">
+                    <button class="suggestion-btn" data-message="¿Qué tours tienen disponibles?">
+                        <i class="fas fa-route"></i> Tours disponibles
+                    </button>
+                    <button class="suggestion-btn" data-message="¿Cuánto cuesta el taller de filigrana?">
+                        <i class="fas fa-gem"></i> Talleres
+                    </button>
+                    <button class="suggestion-btn" data-message="¿Qué incluye el paquete completo?">
+                        <i class="fas fa-box"></i> Paquetes
+                    </button>
+                    <button class="suggestion-btn" data-message="Quiero hacer una reserva">
+                        <i class="fas fa-calendar-check"></i> Reservar
+                    </button>
+                </div>
+            </div>
+
+            <div class="chatbot-input">
+                <input type="text" placeholder="Escribe tu mensaje..." id="chatInput">
+                <button class="btn-send" id="btnSendChat">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Mi Carrito</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Items dinámicos -->
+        </div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <i class="fas fa-shopping-bag"></i>
+            <p>Tu carrito está vacío</p>
+            <span>Agrega experiencias para comenzar</span>
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="cartTotal">S/0</span>
+            </div>
+            <button class="btn-checkout" id="btnCheckout">
+                Proceder al pago <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Modal de Reserva -->
+    <div class="modal" id="reservaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Reservar Experiencia</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="reservaForm">
+                    <div class="form-group">
+                        <label>Experiencia seleccionada</label>
+                        <input type="text" id="modalExperiencia" readonly>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Fecha *</label>
+                            <input type="date" id="modalFecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Personas *</label>
+                            <select id="modalPersonas" required>
+                                <option value="1">1 persona</option>
+                                <option value="2">2 personas</option>
+                                <option value="3">3 personas</option>
+                                <option value="4">4 personas</option>
+                                <option value="5">5 personas</option>
+                                <option value="6+">6+ personas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre completo *</label>
+                            <input type="text" id="modalNombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="modalEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono / WhatsApp</label>
+                        <input type="tel" id="modalTelefono">
+                    </div>
+                    <div class="form-group">
+                        <label>Comentarios adicionales</label>
+                        <textarea id="modalComentarios" rows="3" placeholder="Algún requerimiento especial..."></textarea>
+                    </div>
+                    <div class="modal-price">
+                        <span>Precio total estimado:</span>
+                        <span class="price-display" id="modalPrecio">S/0</span>
+                    </div>
+                    <button type="submit" class="btn-modal-submit">
+                        <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Analytics System - Conexión con Google Sheets -->
+    <script src="js/analytics.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>

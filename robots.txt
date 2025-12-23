@@ -1,0 +1,6 @@
+# Robots.txt para Circuito Turistico Piura - Catacaos
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tu-usuario.github.io/circuito-turistico-piura/sitemap.xml

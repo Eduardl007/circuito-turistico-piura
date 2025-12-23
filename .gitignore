@@ -1,0 +1,37 @@
+# Dependencias
+node_modules/
+bower_components/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.temp
+.cache/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de build
+dist/
+build/
+
+# Documentos internos (no subir al repo publico)
+ANALISIS_NEGOCIO_COMPLETO.md
+GUIA_CONFIGURACION_ANALYTICS.md
+
+# Archivos de backup
+*.bak
+*.backup

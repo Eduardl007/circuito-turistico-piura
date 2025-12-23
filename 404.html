@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina no encontrada | Circuito Turistico Piura - Catacaos</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, sans-serif;
+            background: linear-gradient(135deg, #FFF8F0 0%, #F5E6D3 50%, #E8D5C4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: clamp(120px, 25vw, 200px);
+            font-weight: 700;
+            background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-size: clamp(24px, 5vw, 32px);
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D4A574 0%, #8B6914 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #D4A574;
+            border: 2px solid #e5e7eb;
+        }
+
+        .btn-secondary:hover {
+            border-color: #D4A574;
+            background: #FFF8F0;
+        }
+
+        .suggestions {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .suggestions h3 {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: white;
+            border-radius: 8px;
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .quick-link:hover {
+            color: #D4A574;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #D4A574;
+        }
+
+        @media (max-width: 480px) {
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo {
+                position: relative;
+                top: 0;
+                left: 0;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html" class="logo">
+        <img src="./assets/favicon.svg" alt="Logo" class="logo-icon">
+        <span class="logo-text">Circuito Piura</span>
+    </a>
+
+    <div class="container">
+        <div class="error-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <div class="error-code">404</div>
+        <h1>Ruta no encontrada</h1>
+        <p>Parece que te has perdido en el camino. No te preocupes, te ayudamos a encontrar las mejores experiencias turisticas de Piura y Catacaos.</p>
+
+        <div class="buttons">
+            <a href="./index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                Ir al inicio
+            </a>
+            <a href="./index.html#experiencias" class="btn btn-secondary">
+                <i class="fas fa-compass"></i>
+                Ver experiencias
+            </a>
+        </div>
+
+        <div class="suggestions">
+            <h3>Explora nuestras secciones:</h3>
+            <div class="quick-links">
+                <a href="./index.html#destinos" class="quick-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Destinos
+                </a>
+                <a href="./index.html#talleres" class="quick-link">
+                    <i class="fas fa-gem"></i>
+                    Talleres
+                </a>
+                <a href="./index.html#gastronomia" class="quick-link">
+                    <i class="fas fa-utensils"></i>
+                    Gastronomia
+                </a>
+                <a href="./index.html#paquetes" class="quick-link">
+                    <i class="fas fa-gift"></i>
+                    Paquetes
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
