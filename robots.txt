@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://tu-usuario.github.io/circuito-turistico-piura/sitemap.xml
+Sitemap: https://eduardl007.github.io/circuito-turistico-piura/sitemap.xml
