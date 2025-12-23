@@ -456,8 +456,16 @@
     </div>
 
     <script>
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzdE9ORT0spQIPXQZpvyNHVfZooOTFTYrPm1_mP8r3IkKbWjHxA8Qd0PCaAWZnms0a8/exec';
+
         document.getElementById('validationForm').addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Mostrar estado de envio
+            var btnSubmit = document.querySelector('.btn-submit');
+            var btnOriginal = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btnSubmit.disabled = true;
 
             // Recopilar datos
             var formData = new FormData(this);
@@ -477,23 +485,26 @@
             });
             data.funciones = funciones.length > 0 ? funciones.join(', ') : 'Ninguna seleccionada';
 
-            // Construir mensaje para WhatsApp
-            var mensaje = '📊 *FEEDBACK - CIRCUITO TURISTICO PIURA*\n\n';
-            mensaje += '⭐ *Diseno:* ' + data.diseno + '/5 estrellas\n';
-            mensaje += '🧭 *Navegacion:* ' + data.facilidad + '\n';
-            mensaje += '✅ *Funciones utiles:* ' + data.funciones + '\n';
-            mensaje += '💰 *Intencion de reserva:* ' + data.intencion + '\n';
-            mensaje += '💡 *Sugerencias:* ' + data.sugerencias + '\n';
-            mensaje += '📧 *Email:* ' + data.email + '\n';
-            mensaje += '\n_Enviado desde formulario de validacion_';
-
-            // Enviar por WhatsApp
-            var whatsappUrl = 'https://wa.me/51987654321?text=' + encodeURIComponent(mensaje);
-            window.open(whatsappUrl, '_blank');
-
-            // Mostrar mensaje de gracias
-            document.querySelector('.form-content').classList.add('hidden');
-            document.getElementById('thankYou').classList.add('active');
+            // Enviar a Google Sheets
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(function() {
+                // Mostrar mensaje de gracias
+                document.querySelector('.form-content').classList.add('hidden');
+                document.getElementById('thankYou').classList.add('active');
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar. Por favor intenta de nuevo.');
+                btnSubmit.innerHTML = btnOriginal;
+                btnSubmit.disabled = false;
+            });
         });
     </script>
 </body>
