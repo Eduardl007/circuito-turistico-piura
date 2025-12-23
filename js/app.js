@@ -595,7 +595,7 @@ En 2025 será del 11 al 20 de abril. Incluye:
 
 Tenemos un paquete especial de 3D/2N desde S/650. ¿Te interesa?`,
 
-            default: `¡Gracias por tu mensaje! Soy el Cholo Piurano, tu asistente virtual.
+            default: `¡Gracias por tu mensaje! Soy el Norteñito, tu asistente virtual.
 
 Puedo ayudarte con:
 • Información sobre tours y experiencias
@@ -623,7 +623,7 @@ Puedo ayudarte con:
         } else if (lowerText.includes('precio') || lowerText.includes('costo') || lowerText.includes('cuanto')) {
             return responses.paquetes;
         } else if (lowerText.includes('hola') || lowerText.includes('buenos') || lowerText.includes('buenas')) {
-            return `¡Hola! Bienvenido al Circuito Turístico Piura-Catacaos. Soy el Cholo Piurano, tu asistente virtual. ¿En qué puedo ayudarte hoy?`;
+            return `¡Hola! Bienvenido al Circuito Turístico Piura-Catacaos. Soy el Norteñito, tu asistente virtual. ¿En qué puedo ayudarte hoy?`;
         } else {
             return responses.default;
         }

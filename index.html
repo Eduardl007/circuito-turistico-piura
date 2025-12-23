@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+}<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +13,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
     <!-- Preloader -->
@@ -240,7 +237,7 @@
                 </div>
 
                 <div class="destino-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="destino-image" style="background-image: url('assets/images/Narihuala.jpg')>
+                    <div class="destino-image" style="background-image: url('assets/images/Narihuala.jpg">
                         <div class="destino-overlay"></div>
                     </div>
                     <div class="destino-content">
@@ -1552,10 +1549,10 @@
         <div class="chatbot-window" id="chatbotWindow">
             <div class="chatbot-header">
                 <div class="chatbot-avatar">
-                    <img src="https://via.placeholder.com/40x40/D4A574/fff?text=CP" alt="Cholo Piurano">
+                    <img src="https://via.placeholder.com/40x40/D4A574/fff?text=NT" alt="Norteñito">
                 </div>
                 <div class="chatbot-info">
-                    <h4>Cholo Piurano</h4>
+                    <h4>Norteñito</h4>
                     <span class="chatbot-status"><i class="fas fa-circle"></i> En línea</span>
                 </div>
                 <button class="chatbot-close" id="chatbotClose">
@@ -1566,10 +1563,10 @@
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="chat-message bot">
                     <div class="message-avatar">
-                        <img src="https://via.placeholder.com/30x30/D4A574/fff?text=CP" alt="Bot">
+                        <img src="https://via.placeholder.com/30x30/D4A574/fff?text=NT" alt="Bot">
                     </div>
                     <div class="message-content">
-                        <p>¡Hola! Soy el Cholo Piurano, tu asistente virtual. ¿En qué puedo ayudarte hoy?</p>
+                        <p>¡Hola! Soy el Norteñito, tu asistente virtual. ¿En qué puedo ayudarte hoy?</p>
                         <div class="message-time">Ahora</div>
                     </div>
                 </div>
@@ -1694,18 +1691,14 @@
         </div>
     </div>
 
-<!-- Modal Quick View -->    <div class="modal" id="quickViewModal">        <div class="modal-content modal-lg">            <div class="modal-header">                <h3 id="qvTitle">Detalle de Experiencia</h3>                <button class="modal-close" id="qvClose">                    <i class="fas fa-times"></i>                </button>            </div>            <div class="modal-body">                <div class="quick-view-grid">                    <div class="qv-image">                        <img src="" alt="" id="qvImage">                        <div class="qv-badges" id="qvBadges"></div>                    </div>                    <div class="qv-info">                        <div class="qv-category" id="qvCategory"></div>                        <h2 id="qvName"></h2>                        <p class="qv-desc" id="qvDesc"></p>                        <div class="qv-details" id="qvDetails"></div>                        <div class="qv-rating" id="qvRating"></div>                        <div class="qv-price">                            <span class="price-label">Desde</span>                            <span class="price-value" id="qvPrice">S/0</span>                            <span class="price-unit">/persona</span>                        </div>                        <div class="qv-actions">                            <button class="btn-primary btn-qv-reservar" id="qvReservar">                                <i class="fas fa-calendar-check"></i> Reservar ahora                            </button>                            <button class="btn-secondary btn-qv-wishlist" id="qvWishlist">                                <i class="far fa-heart"></i>                            </button>                        </div>                    </div>                </div>            </div>        </div>    </div>    <!-- Modal Destino -->    <div class="modal" id="destinoModal">        <div class="modal-content modal-lg">            <div class="modal-header">                <h3 id="destTitle">Detalle del Destino</h3>                <button class="modal-close" id="destClose">                    <i class="fas fa-times"></i>                </button>            </div>            <div class="modal-body">                <div class="destino-detail">                    <div class="dest-image">                        <img src="" alt="" id="destImage">                    </div>                    <div class="dest-info">                        <div class="dest-location" id="destLocation"></div>                        <h2 id="destName"></h2>                        <p id="destDesc"></p>                        <div class="dest-highlights" id="destHighlights"></div>                        <div class="dest-actions">                            <button class="btn-primary" id="destExplorar">                                <i class="fas fa-map-marked-alt"></i> Ver en el mapa                            </button>                            <button class="btn-secondary" id="destTours">                                <i class="fas fa-route"></i> Tours relacionados                            </button>                        </div>                    </div>                </div>            </div>        </div>    </div>
     <!-- Toast Notifications -->
     <div class="toast-container" id="toastContainer"></div>
 
     <!-- Scripts -->
-    <!-- Leaflet JS - debe cargar primero -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Analytics System - Conexión con Google Sheets -->
     <script src="js/analytics.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/modules.js"></script>
-    <script src="js/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

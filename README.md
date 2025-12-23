@@ -35,7 +35,7 @@ Plataforma web interactiva para promocionar el circuito turistico Piura - Cataca
 - Animaciones fluidas con AOS
 - Slider de hero interactivo
 - Filtros de experiencias por categoria
-- Chatbot asistente virtual "Cholo Piurano"
+- Chatbot asistente virtual "Norteñito"
 - Galeria gastronomica interactiva
 - Testimonios de viajeros
 - Formulario de contacto funcional
@@ -140,7 +140,7 @@ circuito-turistico-piura/
 - Formulario de datos del cliente
 
 ### Chatbot Interactivo
-- Asistente virtual "Cholo Piurano"
+- Asistente virtual "Norteñito"
 - Respuestas predefinidas sobre tours, talleres y paquetes
 - Sugerencias rapidas de acciones
 
