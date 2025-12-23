@@ -1938,6 +1938,10 @@ input, textarea, select {
 }
 
 .mapa-frame {
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e5e5e5;
     position: relative;
 }
 
@@ -3284,6 +3288,10 @@ input, textarea, select {
     }
 
     .mapa-frame {
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e5e5e5;
         height: 400px;
     }
 
@@ -3440,6 +3448,10 @@ input, textarea, select {
     }
 
     .mapa-frame {
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e5e5e5;
         height: 350px;
     }
 
