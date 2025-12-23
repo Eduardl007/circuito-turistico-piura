@@ -906,18 +906,18 @@ function initForms() {
 // 12. MAPA INTERACTIVO (PLACEHOLDER)
 // ============================================
 
-function initMapPlaceholder() {    const mapContainer = document.getElementById('map');    // Si Leaflet esta disponible, no crear placeholder    if (typeof L !== 'undefined') {        console.log('Leaflet detectado - mapa sera inicializado por map.js');        return;    }    // Placeholder solo si Leaflet no esta disponible    mapContainer.innerHTML = `
-        <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%); color: #666;">
-            <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 1rem; color: #D4A574;"></i>
-            <h3 style="margin-bottom: 0.5rem;">Mapa Interactivo</h3>
-            <p style="font-size: 0.9rem; text-align: center; max-width: 300px;">
-                Aquí se mostrará el mapa de Google Maps con todos los puntos de interés del circuito turístico.
-            </p>
-            <p style="font-size: 0.8rem; color: #999; margin-top: 1rem;">
-                Coordenadas: -5.1945, -80.6286 (Catacaos)
-            </p>
-        </div>
-    `;
+function initMapPlaceholder() {
+    // Si Leaflet esta disponible, no crear placeholder (map.js lo manejara)
+    if (typeof L !== 'undefined') {
+        console.log('Leaflet detectado - mapa sera inicializado por map.js');
+        return;
+    }
+
+    // Placeholder solo si Leaflet no esta disponible
+    var mapContainer = document.getElementById('map');
+    if (mapContainer) {
+        mapContainer.innerHTML = '<div style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f5f5f5;color:#666;"><i class="fas fa-map-marked-alt" style="font-size:4rem;margin-bottom:1rem;color:#D4A574;"></i><h3>Cargando mapa...</h3></div>';
+    }
 
     // Panel de detalle
     const detailPanel = document.getElementById('placeDetailPanel');
